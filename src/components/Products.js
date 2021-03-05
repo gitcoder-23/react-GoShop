@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { ProductsContext } from '../Global/ProductsContext';
+import { CartContext } from '../Global/CartContext';
 import Banner from './Banner';
 const Products = () => {
 
@@ -8,7 +9,9 @@ const Products = () => {
     // console.log('all product', data);
     // "products" coming from ProductsContext page
     const {products} = useContext(ProductsContext);
-    
+    const {dispatch} = useContext(CartContext);
+    // const data = useContext(CartContext);
+    // console.log('Shopping data->', data);
 
     return (
         <>
@@ -38,7 +41,11 @@ const Products = () => {
                         
                         </div>
                         
-                    <div className="add-to-cart">
+                    <div className="add-to-cart" 
+                    // coming from reducer function
+                    // product: product
+                    //  id include in action
+                    onClick={() => dispatch({type: 'ADD_TO_CART', id: product.id, product})}>
                         Add To cart
                     </div> 
                     {/* check status here */}

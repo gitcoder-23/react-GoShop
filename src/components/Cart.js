@@ -1,9 +1,9 @@
-import React from 'react'
-import { Link } from 'react-router-dom';
-
+import React, { useContext } from 'react';
+import { CartContext } from '../Global/CartContext';
 
  const Cart = () => {
-
+    const data = useContext(CartContext);
+    console.log('context-data', data);
     return (
 
         <div className="cart-container" style={{marginTop: '100px', }}>
