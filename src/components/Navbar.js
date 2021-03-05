@@ -1,16 +1,18 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
+
 
 const Navbar = () => {
     return (
         <nav>
             <ul className="left">
-                <li><a href="">Go Shop</a></li>
+                <li><Link to="/">GoShop</Link></li>
             </ul>
 
             <ul className="right">
-                <li><a href=""><span className="shoppingCart"><i class="fas fa-cart-plus"></i>
+                <li><Link to="cart"><span className="shoppingCart"><i className="fas fa-cart-plus"></i>
                 <span className="cartCount">0</span>
-                </span></a></li>
+                </span></Link></li>
             </ul>
         </nav>
     );

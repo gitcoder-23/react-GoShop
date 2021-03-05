@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
-import { ProductsContext } from '../Global/productContext';
-
+import { ProductsContext } from '../Global/ProductsContext';
+import Banner from './Banner';
 const Products = () => {
 
 
@@ -13,6 +13,7 @@ const Products = () => {
     return (
         <>
         
+        <Banner />
         <div className="products">
             {/* map accesses all objects */}
             {products.map((product) =>(
