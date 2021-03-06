@@ -470,6 +470,7 @@ nav ul li .shoppingCartTotal {
 .cart-summary {
   width: 25%;
   padding: 0 0 0 20px;
+  margin-top: 75px;
 }
 
 .cartSummary {
@@ -486,7 +487,7 @@ nav ul li .shoppingCartTotal {
   font-size: 18px;
   font-weight: normal;
   border-bottom: 1px solid #999;
-  padding-bottom: 7px;
+  padding-bottom: 8px;
 }
 .total-items {
   display: flex;
@@ -539,12 +540,27 @@ nav ul li .shoppingCartTotal {
   text-align: left;
   font-weight: normal;
 }
+
+.items-price {
+  font-weight: bold;
+  width: 50%;
+  text-align: right;
+  color: #f57224;
+}
+
 .itemsPrice {
   font-weight: bold;
   width: 50%;
   text-align: right;
   color: #f57224;
 }
+
+.strip-section {
+  margin: 15px 0;
+  border-top: 1px solid #999;
+  padding-top: 15px;
+}
+
 .stripSection {
   margin: 15px 0;
   border-top: 1px solid #999;

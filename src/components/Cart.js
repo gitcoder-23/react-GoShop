@@ -1,6 +1,17 @@
 import React, { useContext } from 'react';
 import { CartContext } from '../Global/CartContext';
 
+//  for easy payment method
+// go to website create new account https://dashboard.stripe.com/test/dashboard
+// Verify email address
+
+// testing card https://stripe.com/docs/testing#cards
+import StripeCheckout from 'react-stripe-checkout';
+
+
+
+
+
  const Cart = () => {
      
     // const data = useContext(CartContext);
@@ -8,6 +19,11 @@ import { CartContext } from '../Global/CartContext';
     // destructured data coming from cartContext.js
     const { shoppingCart, totalPrice, qty, dispatch } = useContext(CartContext);
     console.log('context-data', shoppingCart);
+
+    const handleToken = (token) => {
+
+    };
+
     return (
         <div className="cart-container">
         <div className="cart-details" style={{marginTop: '100px', }}>
@@ -72,6 +88,18 @@ import { CartContext } from '../Global/CartContext';
             </div>
             <div className="stripe-section">
                 {/* Stripe button */}
+                {/* shippingAddress all are from stripe */}
+                <StripeCheckout 
+                  stripeKey= "pk_test_51IRuUwB8Wa8sNbxwTfQfsdi3hPgxWkiqrooKYJvcCIULUFdGuemSGgi0ZYp4JfHKmmOV8KXJDk6PTJGMMqBWILU000locHOtGI" token={handleToken} 
+                  billingAddress
+                  shippingAddress
+                //   Define cut amount
+                // to get exact price multiply 100
+                  amount={totalPrice * 100}
+                  name="All Products"
+                >
+
+                </StripeCheckout>
             </div>
         </div>
     </div> : ''}
