@@ -272,7 +272,7 @@ nav ul li .shoppingCartTotal {
 .cart-container {
   width: 100%;
   margin-top: 100px;
-  padding: 0 104px;
+  padding: 0 100px;
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
@@ -302,9 +302,19 @@ nav ul li .shoppingCartTotal {
 .cart {
   display: flex;
   align-items: center;
-  background: #fff;
+  background: var(--whiteColor);
   padding: 15px 20px;
 }
+
+.cart-image {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+  position: relative;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
 
 .cartProImage {
   display: inline-block;
@@ -312,6 +322,14 @@ nav ul li .shoppingCartTotal {
   height: 80px;
   position: relative;
 }
+
+.cart-image img {
+  width: 100%;
+  height: 100%;
+}
+
+
+
 .imageCount {
   position: absolute;
   display: block;
@@ -337,11 +355,29 @@ nav ul li .shoppingCartTotal {
   height: 100%;
 }
 
+.cart-product-name {
+  display: inline-block;
+  width: 150px;
+  padding: 0 15px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
 .cartProductName {
   width: 250px;
   padding: 0 15px;
   font-size: 14px;
 }
+
+.cart-product-price{
+  display: inline-block;
+  width: 120px;
+  padding: 0 15px;
+  text-align: center;
+  font-weight: bold;
+  color: var(--mainColor);
+}
+
 .cartProductPrice {
   width: 120px;
   padding: 0 15px;
@@ -354,12 +390,23 @@ nav ul li .shoppingCartTotal {
   height: 40px;
   line-height: 40px;
   text-align: center;
-  border: 1.1px solid orangered;
-  color: orangered;
-  border-radius: 50%;
+  border: 1.1px solid var(--mainColor);
+  color:  var(--mainColor);
+  border-radius: 3px;
   cursor: pointer;
+  font-size: 14px;
   font-weight: normal;
 }
+
+.product-quantity {
+  display: inline-block;
+  padding: 0 15px;
+  font-size: 15px;
+  width: 70px;
+  text-align: center;
+}
+
+
 .productQuantity {
   display: inline-block;
   padding: 0 15px;
@@ -373,12 +420,23 @@ nav ul li .shoppingCartTotal {
   height: 40px;
   line-height: 40px;
   text-align: center;
-  border: 1.1px solid rgb(228, 98, 98);
-  color: rgb(228, 98, 98);
-  border-radius: 50%;
+  border: 1.1px solid rgb(187, 58, 58);
+  color: rgb(187, 58, 58);
+  border-radius: 3px;
   cursor: pointer;
   font-weight: normal;
 }
+
+.product-total-price{
+  display: inline-block;
+  width: 170px;
+  padding: 0 15px;
+  font-weight: bold;
+  color: #000000;
+  text-align: center;
+}
+
+
 .productTotalPrice {
   display: inline-block;
   width: 150px;
@@ -387,6 +445,18 @@ nav ul li .shoppingCartTotal {
   color: #f57224;
   text-align: center;
 }
+
+.delete-product {
+  border: none;
+  display: inline-block;
+  padding: 0 15px;
+  color: rgb(187, 58, 58);
+  background: transparent;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+
 .deleteCartPro {
   border:none;
   display: inline-block;
@@ -397,13 +467,18 @@ nav ul li .shoppingCartTotal {
   cursor: pointer;
 }
 
+.cart-summary {
+  width: 25%;
+  padding: 0 0 0 20px;
+}
+
 .cartSummary {
   width: 25%;
   padding: 0 0 0 20px;
 }
 
 .summary {
-  background: #fff;
+  background: var(--whiteColor);
   padding: 13px;
 }
 
@@ -413,25 +488,52 @@ nav ul li .shoppingCartTotal {
   border-bottom: 1px solid #999;
   padding-bottom: 7px;
 }
+.total-items {
+  display: flex;
+  margin: 15px 0;
+}
+
 .totalItems {
   display: flex;
   margin: 15px 0;
 }
+
 .items {
   width: 50%;
   text-align: left;
   font-weight: normal;
 }
+
+.items-count {
+  width: 50%;
+  text-align: right;
+  font-weight: bold;
+  color: #f57224;
+}
+
 .itemsCount {
   width: 50%;
   text-align: right;
   font-weight: bold;
   color: #f57224;
 }
+
+.total-price-section {
+  display: flex;
+  margin: 15px 0;
+}
+
 .totalPriceSection {
   display: flex;
   margin: 15px 0;
 }
+
+.just-title {
+  width: 50%;
+  text-align: left;
+  font-weight: normal;
+}
+
 .justTitle {
   width: 50%;
   text-align: left;

@@ -21,8 +21,8 @@ const ProductsContextProvider = ( props ) => {
         { id: 2, name: 'Head Phone', price: 299, image: headphones, status: 'new'},
         { id: 3, name: 'Iphone', price: 68000, image: iphone, status: 'hot'},
         { id: 4, name: 'Blue Yetti', price: 30000, image: blueYetti, status: 'hot'},
-        { id: 5, name: 'Perfume', price: 899, image: perfume, status: 'new'},
-        { id: 6, name: 'Rings', price: 9999, image: rings, status: 'new'},
+        { id: 5, name: 'Perfume', price: 899.58, image: perfume, status: 'new'},
+        { id: 6, name: 'Rings', price: 799.89, image: rings, status: 'new'},
         { id: 7, name: 'Shoes', price: 7899, image: shoes, status: 'hot'},
         { id: 8, name: 'Watch', price: 6899, image: watch, status: 'new'},
 
