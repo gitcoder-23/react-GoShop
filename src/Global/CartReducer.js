@@ -95,8 +95,13 @@ export const CartReducer = (state, action) => {
         
         break;
 
-         default:
-             return state;   
+        // Case 5 EMPTY cart
+        case 'EMPTY': 
+        // empty product occur
+           return {shoppingCart: [], totalPrice: 0, qty: 0};
+
+        default:
+        return state;   
     }
 };
 

@@ -6,7 +6,7 @@ import Navbar from './components/Navbar';
 import ProductsContextProvider from './Global/ProductsContext';
 import CartContextProvider from './Global/CartContext'
 import Products from './components/Products';
-import Cart from './components/Cart';
+import Cart from './components/Cart_old';
 import NotFound from './components/NotFound';
 function App() {
   return (

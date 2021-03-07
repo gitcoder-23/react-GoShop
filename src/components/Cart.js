@@ -1,15 +1,21 @@
 import React, { useContext } from 'react';
 import { CartContext } from '../Global/CartContext';
-import axios from 'axios';
-
 //  for easy payment method
 // go to website create new account https://dashboard.stripe.com/test/dashboard
 // Verify email address
 
 // testing card https://stripe.com/docs/testing#cards
 import StripeCheckout from 'react-stripe-checkout';
+import axios from 'axios';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
- const Cart = () => {
+
+toast.configure();
+
+
+
+ const Cart = (props) => {
      
     // const data = useContext(CartContext);
     // console.log('context-data', data);
@@ -31,7 +37,19 @@ import StripeCheckout from 'react-stripe-checkout';
             // set product here
             product, token
         });
-        console.log('payment check->', response);
+        // console.log('payment check->', response);
+
+        // 'status' is 'data' access from Stripe* payment object
+            const { status } = response.data;
+            if(status === "success") {
+                // cart will be empty go to cartreducer
+                dispatch({type: 'EMPTY'});
+                props.history.push('/');
+                toast.success("You have paid successfully. Continue shopping!", {position: toast.POSITION.TOP_RIGHT});
+            }else {
+                toast.error("Payment filed!", {position: toast.POSITION.TOP_RIGHT});
+            }
+        
     };
 
     return (
