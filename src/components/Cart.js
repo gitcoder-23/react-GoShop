@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { CartContext } from '../Global/CartContext';
+import axios from 'axios';
 
 //  for easy payment method
 // go to website create new account https://dashboard.stripe.com/test/dashboard
@@ -7,10 +8,6 @@ import { CartContext } from '../Global/CartContext';
 
 // testing card https://stripe.com/docs/testing#cards
 import StripeCheckout from 'react-stripe-checkout';
-
-
-
-
 
  const Cart = () => {
      
@@ -20,8 +17,21 @@ import StripeCheckout from 'react-stripe-checkout';
     const { shoppingCart, totalPrice, qty, dispatch } = useContext(CartContext);
     console.log('context-data', shoppingCart);
 
-    const handleToken = (token) => {
+    // for payment gateway
+    const handleToken = async (token) => {
+        // console.log('pay-token->', token);
+        // set token data
+        const product = {
+            name: 'All Products',
+            price: totalPrice,
+        };
 
+        //  get api using axios
+        const response = await axios.post("http://localhost:8080/checkout", {
+            // set product here
+            product, token
+        });
+        console.log('payment check->', response);
     };
 
     return (
